@@ -40,12 +40,16 @@
             this.lblAqi = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblAqicategory = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblUnit = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rdbtnPunjabaqi
             // 
             this.rdbtnPunjabaqi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtnPunjabaqi.Location = new System.Drawing.Point(66, 75);
+            this.rdbtnPunjabaqi.Location = new System.Drawing.Point(77, 87);
             this.rdbtnPunjabaqi.Name = "rdbtnPunjabaqi";
             this.rdbtnPunjabaqi.Size = new System.Drawing.Size(103, 22);
             this.rdbtnPunjabaqi.TabIndex = 0;
@@ -68,7 +72,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 44);
+            this.label1.Location = new System.Drawing.Point(31, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 22);
             this.label1.TabIndex = 2;
@@ -77,18 +81,19 @@
             // rdbtnUsaqi
             // 
             this.rdbtnUsaqi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtnUsaqi.Location = new System.Drawing.Point(66, 103);
+            this.rdbtnUsaqi.Location = new System.Drawing.Point(228, 87);
             this.rdbtnUsaqi.Name = "rdbtnUsaqi";
             this.rdbtnUsaqi.Size = new System.Drawing.Size(77, 22);
             this.rdbtnUsaqi.TabIndex = 3;
             this.rdbtnUsaqi.Text = "US AQI";
             this.rdbtnUsaqi.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.rdbtnUsaqi.UseVisualStyleBackColor = true;
+            this.rdbtnUsaqi.CheckedChanged += new System.EventHandler(this.rdbtnUsaqi_CheckedChanged);
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 128);
+            this.label2.Location = new System.Drawing.Point(31, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 48);
             this.label2.TabIndex = 4;
@@ -99,15 +104,16 @@
             // 
             this.cmbPollutant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPollutant.FormattingEnabled = true;
-            this.cmbPollutant.Location = new System.Drawing.Point(66, 179);
+            this.cmbPollutant.Location = new System.Drawing.Point(77, 163);
             this.cmbPollutant.Name = "cmbPollutant";
-            this.cmbPollutant.Size = new System.Drawing.Size(195, 21);
+            this.cmbPollutant.Size = new System.Drawing.Size(228, 21);
             this.cmbPollutant.TabIndex = 5;
+            this.cmbPollutant.SelectedIndexChanged += new System.EventHandler(this.cmbPollutant_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 203);
+            this.label3.Location = new System.Drawing.Point(31, 254);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 48);
             this.label3.TabIndex = 6;
@@ -116,16 +122,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 254);
+            this.textBox1.Location = new System.Drawing.Point(77, 305);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
+            this.textBox1.Size = new System.Drawing.Size(228, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 277);
+            this.label4.Location = new System.Drawing.Point(31, 328);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 48);
             this.label4.TabIndex = 8;
@@ -136,7 +142,7 @@
             // 
             this.lblAqi.AutoSize = true;
             this.lblAqi.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAqi.Location = new System.Drawing.Point(66, 329);
+            this.lblAqi.Location = new System.Drawing.Point(73, 376);
             this.lblAqi.Name = "lblAqi";
             this.lblAqi.Size = new System.Drawing.Size(18, 19);
             this.lblAqi.TabIndex = 9;
@@ -145,7 +151,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 348);
+            this.label6.Location = new System.Drawing.Point(177, 328);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 48);
             this.label6.TabIndex = 10;
@@ -156,17 +162,61 @@
             // 
             this.lblAqicategory.AutoSize = true;
             this.lblAqicategory.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAqicategory.Location = new System.Drawing.Point(66, 396);
+            this.lblAqicategory.Location = new System.Drawing.Point(224, 376);
             this.lblAqicategory.Name = "lblAqicategory";
             this.lblAqicategory.Size = new System.Drawing.Size(35, 19);
             this.lblAqicategory.TabIndex = 11;
             this.lblAqicategory.Text = "NIL";
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 48);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Unit:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblUnit
+            // 
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnit.Location = new System.Drawing.Point(73, 235);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(40, 19);
+            this.lblUnit.TabIndex = 13;
+            this.lblUnit.Text = "Unit";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(348, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Calculate";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(441, 296);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 34);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Reset";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(624, 448);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblUnit);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblAqicategory);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblAqi);
@@ -204,6 +254,10 @@
         private System.Windows.Forms.Label lblAqi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblAqicategory;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblUnit;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
