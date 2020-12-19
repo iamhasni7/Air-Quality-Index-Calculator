@@ -35,15 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbPollutant = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblAqi = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblAqicategory = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblUnit = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rdbtnPunjabaqi
@@ -120,13 +120,12 @@
             this.label3.Text = "Enter the Concentration:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtBoxValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 305);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtBoxValue.Location = new System.Drawing.Point(77, 305);
+            this.txtBoxValue.Name = "txtBoxValue";
+            this.txtBoxValue.Size = new System.Drawing.Size(228, 20);
+            this.txtBoxValue.TabIndex = 7;
             // 
             // label4
             // 
@@ -188,40 +187,42 @@
             this.lblUnit.TabIndex = 13;
             this.lblUnit.Text = "Unit";
             // 
-            // button1
+            // btnCalculate
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(348, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCalculate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculate.Location = new System.Drawing.Point(348, 296);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(87, 34);
+            this.btnCalculate.TabIndex = 14;
+            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
-            // button2
+            // btnReset
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(441, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 34);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReset.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(441, 296);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(87, 34);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 448);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblAqicategory);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblAqi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxValue);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbPollutant);
             this.Controls.Add(this.label2);
@@ -249,15 +250,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbPollutant;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxValue;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblAqi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblAqicategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblUnit;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
