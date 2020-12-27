@@ -126,6 +126,7 @@
             this.txtBoxValue.Name = "txtBoxValue";
             this.txtBoxValue.Size = new System.Drawing.Size(228, 20);
             this.txtBoxValue.TabIndex = 7;
+            this.txtBoxValue.TextChanged += new System.EventHandler(this.txtBoxValue_TextChanged);
             // 
             // label4
             // 

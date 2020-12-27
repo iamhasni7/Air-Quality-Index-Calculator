@@ -13,7 +13,6 @@ namespace AQI_Calculator
     public partial class frmMain : Form
     {
 
-       
 
         public int Linear(int AQIhigh, int AQIlow, double Conchigh, double Conclow, float Concentration)
         {
@@ -24,8 +23,8 @@ namespace AQI_Calculator
             return linear;
         }
 
-
-        public int AQIPM25(float Concentration)
+        // Methods for US-AQI Calculation
+        private int AQIPM25(float Concentration)
         {
             float c;
             int AQI = 0;
@@ -64,8 +63,7 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-        public int AQIPM10(float Concentration)
+        private int AQIPM10(float Concentration)
         {
             float c;
             int AQI = 0;
@@ -104,9 +102,7 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-
-        public int AQICO(float Concentration)
+        private int AQICO(float Concentration)
         {
             float c;
             int AQI = 0;
@@ -145,9 +141,7 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-
-        public int AQISO2(float Concentration)
+        private int AQISO2(float Concentration)
         {
             float c;
             int AQI = 0;
@@ -186,13 +180,12 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-
-        public int AQIO38hr(float Concentration)
+        private int AQIO38hr(float Concentration)
         {
             float c;
             int AQI = 0;
-            c = (float)Math.Floor(Concentration) / 1000;
+            //c = (float)Math.Floor(Concentration) / 1000;
+            c = Concentration;
             if (c >= 0 && c < .055)
             {
                 AQI = Linear(50, 0, 0.054, 0, c);
@@ -223,13 +216,11 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-
-        public int AQIO31hr(float Concentration)
+        private int AQIO31hr(float Concentration)
         {
-            float c;
             int AQI = 0;
-            c = (float)Math.Floor(Concentration) / 1000;
+            //c = (float)Math.Floor(Concentration) / 1000;
+            float c = Concentration;
             if (c >= 0 && c <= .124)
             {
                 MessageBox.Show("This value is available in O3 8hour concentration.");
@@ -262,9 +253,7 @@ namespace AQI_Calculator
             }
             return AQI;
         }
-
-
-        public int AQINO2(float Concentration)
+        private int AQINO2(float Concentration)
         {
             float c;
             int AQI = 0;
@@ -304,19 +293,211 @@ namespace AQI_Calculator
             return AQI;
         }
 
+
+        // Methods for Punjab-AQI Calculation
+        private int Punjab_AQIPM25(float Concentration)
+        {
+            float c;
+            int AQI = 0;
+            c = (float)(Math.Floor(10 * Concentration) / 10);
+            if (c >= 0 && c < 35.1)
+            {
+                AQI = Linear(100, 0, 35, 0, c);
+            }
+            else if (c >= 36 && c < 70.1)
+            {
+                AQI = Linear(200, 101, 70, 36, c);
+            }
+            else if (c >= 71 && c < 105.1)
+            {
+                AQI = Linear(300, 200, 105, 71, c);
+            }
+            else if (c >= 106 && c < 140.1)
+            {
+                AQI = Linear(400, 301, 140, 106, c);
+            }
+            else if (c >= 141 && c < 300.1)
+            {
+                AQI = Linear(500, 401, 300, 141, c);
+            }
+            else if (c > 300)
+            {
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+        private int Punjab_AQIPM10(float Concentration)
+        {
+            float c;
+            int AQI = 0;
+            c = (float)Math.Floor(Concentration);
+            if (c >= 0 && c < 150.1)
+            {
+                AQI = Linear(100, 0, 150, 0, c);
+            }
+            else if (c >= 151 && c < 200.1)
+            {
+                AQI = Linear(200, 101, 200, 151, c);
+            }
+            else if (c >= 201 && c < 250.1)
+            {
+                AQI = Linear(300, 200, 250, 201, c);
+            }
+            else if (c >= 251 && c < 350.1)
+            {
+                AQI = Linear(400, 301, 350, 251, c);
+            }
+            else if (c >= 351 && c < 430.1)
+            {
+                AQI = Linear(500, 401, 430, 351, c);
+            }
+            else if (c >430)
+            {
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+        private int Punjab_AQICO(float Concentration)
+        {
+            float c;
+            int AQI = 0;
+            c = (float)Math.Floor(10 * Concentration) / 10;
+            if (c >= 0 && c < 5.1)
+            {
+                AQI = Linear(100, 0, 5, 0, c);
+            }
+            else if (c >= 5 && c < 10.1)
+            {
+                AQI = Linear(200, 101, 10, 5, c);
+            }
+            else if (c >= 11 && c < 25.1)
+            {
+                AQI = Linear(300, 201, 25, 11, c);
+            }
+            else if (c >= 26 && c < 40.1)
+            {
+                AQI = Linear(400, 301, 40, 26, c);
+            }
+            else if (c >= 41 && c < 50.1)
+            {
+                AQI = Linear(500, 401, 50, 41, c);
+            }
+            else if (c >50)
+            {
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+        private int Punjab_AQISO2(float Concentration)
+        {
+            float c;
+            int AQI = 0;
+            c = (float)Math.Floor(Concentration);
+            if (c >= 0 && c < 120.1)
+            {
+                AQI = Linear(100, 0, 120, 0, c);
+            }
+            else if (c >= 121 && c < 240.1)
+            {
+                AQI = Linear(200, 101, 240, 121, c);
+            }
+            else if (c >= 241 && c < 360.1)
+            {
+                AQI = Linear(300, 201, 360, 241, c);
+            }
+            else if (c >= 361 && c <= 700.1)
+            {
+                AQI = Linear(400, 301, 700, 361, c);
+            }
+            else if (c >= 701 && c <= 1600.1)
+            {
+                AQI = Linear(500, 401, 1600, 701, c);
+            }
+            else if (c > 1600)
+            {
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+        private int Punjab_AQIO3(float Concentration)
+        {
+            int AQI = 0;
+            //c = (float)Math.Floor(Concentration) / 1000;
+            float c = Concentration;
+            if (c >= 0 && c <= 130.1)
+            {
+                AQI = Linear(100, 0, 130, 0, c);
+            }
+            else if (c >= 131 && c < 260.1)
+            {
+                AQI = Linear(200, 101, 260, 131, c);
+            }
+            else if (c >= 261 && c < 450.1)
+            {
+                AQI = Linear(300, 201, 450, 261, c);
+            }
+            else if (c >= 451 && c < 550.1)
+            {
+                AQI = Linear(400, 301, 550, 451, c);
+            }
+            else if (c >= 551 && c < 1900.1)
+            {
+                AQI = Linear(500, 401, 1900, 551, c);
+            }
+            else if (c > 1900)
+            {
+
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+        private int Punjab_AQINO2(float Concentration)
+        {
+            float c = Concentration;
+            int AQI = 0;
+            //c = (float)Math.Floor(Concentration) / 1000;
+            if (c >= 0 && c < 80.1)
+            {
+                AQI = Linear(100, 0, 80, 0, c);
+            }
+            else if (c >= 81 && c < 160.1)
+            {
+                AQI = Linear(200, 101, 160, 80, c);
+            }
+            else if (c >= 161 && c < 320.1)
+            {
+                AQI = Linear(300, 201, 320, 161, c);
+            }
+            else if (c >= 321 && c < 560.1)
+            {
+                AQI = Linear(400, 301, 560, 321, c);
+            }
+            else if (c >= 561 && c < 800.1)
+            {
+                AQI = Linear(500, 401, 800, 561, c);
+            }
+            else if (c > 800)
+            {
+                MessageBox.Show("AQI values are 500+");
+            }
+            return AQI;
+        }
+
+
         public frmMain()
         {
             InitializeComponent();
-            public static int PM10()
-            {
 
-            }
+            
 
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            if (String.IsNullOrEmpty(txtBoxValue.Text))
+            {
+                btnCalculate.Enabled = false;
+            }
         }
 
         private void rdbtnPunjabaqi_CheckedChanged(object sender, EventArgs e)
@@ -363,46 +544,80 @@ namespace AQI_Calculator
 
 
             string finalItem = cmbPollutant.SelectedItem.ToString();
-
-            switch (finalItem)
+            if (rdbtnUsaqi.Checked)
             {
-                case "PM10":
-                    lblUnit.Text = "ug/m3";
-                    break;
+                switch (finalItem)
+                {
+                    case "PM10":
+                        lblUnit.Text = "ug/m3";
+                        break;
 
-                case "PM2.5":
-                    lblUnit.Text = "ug/m3";
-                    break;
+                    case "PM2.5":
+                        lblUnit.Text = "ug/m3";
+                        break;
 
-                case "SO2":
-                    lblUnit.Text = "ppb";
-                    break;
+                    case "SO2":
+                        lblUnit.Text = "ppb";
+                        break;
 
-                case "NO2":
-                    lblUnit.Text = "ppb";
-                    break;
+                    case "NO2":
+                        lblUnit.Text = "ppb";
+                        break;
 
-                case "O3":
-                    lblUnit.Text = "ppb";
-                    break;
+                    case "O3 (8hours)":
+                        lblUnit.Text = "ppm";
+                        break;
 
-                case "O3 (8hours)":
-                    lblUnit.Text = "ppb";
-                    break;
+                    case "O3 (1hour)":
+                        lblUnit.Text = "ppm";
+                        break;
 
-                case "O3 (1hour)":
-                    lblUnit.Text = "ppb";
-                    break;
+                    case "CO":
+                        lblUnit.Text = "ppm";
+                        break;
 
-                case "CO":
-                    lblUnit.Text = "ppm";
-                    break;
+                    default:
+                        lblUnit.Text = "Unit";
+                        break;
+                }
+            }
 
-                default:
-                    lblUnit.Text = "Unit";
-                    break;
+            else if (rdbtnPunjabaqi.Checked)
+            {
+                switch (finalItem)
+                {
+                    case "PM10":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    case "PM2.5":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    case "SO2":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    case "NO2":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    case "O3":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    case "CO":
+                        lblUnit.Text = "ug/m3";
+                        break;
+
+                    default:
+                        lblUnit.Text = "Unit";
+                        break;
+                }
             }
         }
+
+
 
         /// <summary>
         /// 
@@ -411,47 +626,7 @@ namespace AQI_Calculator
         /// <param name="e"></param>
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-          
-
-
-
-            if (rdbtnUsaqi.Checked)
-            {
-                string finalItem = cmbPollutant.SelectedItem.ToString();
-
-                switch (finalItem)
-                {
-                    case "PM10":
-                        // geting the textbox value
-                        string cal = txtBoxValue.Text;
-                        float a;
-
-                        // check if the value is a number or not a number
-                        if (!float.TryParse(cal, out a))
-                        {
-                            MessageBox.Show("Only numbers are accepted");
-                            return;
-                        }
-
-                        // parsing the textbox value to a float/number for calculation purpose
-                        float parsedCal;
-                        parsedCal = float.Parse(cal);
-
-                        int tempAQI;
-                        tempAQI = AQIPM10(parsedCal);
-
-                        lblAqi.Text = tempAQI.ToString();
-                        break;
-
-                    case "PM2.5":
-                        
-                        break;
-                }
-            }
-
-
-
-          /*  // geting the textbox value
+            // geting the textbox value
             string cal = txtBoxValue.Text;
             float a;
 
@@ -466,18 +641,134 @@ namespace AQI_Calculator
             float parsedCal;
             parsedCal = float.Parse(cal);
 
-            int tempAQI;
-            tempAQI = AQIPM10(parsedCal);
+            if (rdbtnUsaqi.Checked)
+            {
+                string finalItem = cmbPollutant.SelectedItem.ToString();
 
-            lblAqi.Text = tempAQI.ToString();
+                switch (finalItem)
+                {
+                    case "PM10":
+                        lblAqi.Text = AQIPM10(parsedCal).ToString();
+                        break;
+                    case "PM2.5":
+                        lblAqi.Text = AQIPM25(parsedCal).ToString();
+                        break;
+                    case "CO":
+                        lblAqi.Text = AQICO(parsedCal).ToString();
+                        break;
+                    case "SO2":
+                        lblAqi.Text = AQISO2(parsedCal).ToString();
+                        break;
+                    case "NO2":
+                        lblAqi.Text = AQINO2(parsedCal).ToString();
+                        break;
+                    case "O3 (8hours)":
+                        lblAqi.Text = AQIO38hr(parsedCal).ToString();
+                        break;
+                    case "O3 (1hour)":
+                        lblAqi.Text = AQIO31hr(parsedCal).ToString();
+                        break;
 
+                }
+            }
+            else if (rdbtnPunjabaqi.Checked)
+            {
+                string finalItem = cmbPollutant.SelectedItem.ToString();
 
+                switch (finalItem)
+                {
+                    case "PM10":
+                        lblAqi.Text = Punjab_AQIPM10(parsedCal).ToString();
+                        break;
+                    case "PM2.5":
+                        lblAqi.Text = Punjab_AQIPM25(parsedCal).ToString();
+                        break;
+                    case "CO":
+                        lblAqi.Text = Punjab_AQICO(parsedCal).ToString();
+                        break;
+                    case "SO2":
+                        lblAqi.Text = Punjab_AQISO2(parsedCal).ToString();
+                        break;
+                    case "NO2":
+                        lblAqi.Text = Punjab_AQINO2(parsedCal).ToString();
+                        break;
+                    case "O3":
+                        lblAqi.Text = Punjab_AQIO3(parsedCal).ToString();
+                        break;
 
-            */
+                }
+            }
 
+            string yo = lblAqi.Text;
+            int b = int.Parse(yo);
 
+            if (rdbtnPunjabaqi.Checked)
+            {
+                if (b > 0 && b <= 100)
+                {
+                    lblAqicategory.Text = "Good";
+                }
+                else if (b >= 101 && b <= 200)
+                {
+                    lblAqicategory.Text = "Satisfactory";
+                }
+                else if (b >= 201 && b <= 300)
+                {
+                    lblAqicategory.Text = "Moderately Polluted";
+                }
+                else if (b >= 301 && b <= 400)
+                {
+                    lblAqicategory.Text = "Poor";
+                }
+                else if (b >= 301 && b <= 400)
+                {
+                    lblAqicategory.Text = "Poor";
+                }
+                else if (b >= 401 && b <= 500)
+                {
+                    lblAqicategory.Text = "Very Poor";
+                }
+                else
+                {
+                    lblAqicategory.Text = "NIL";
+                }
+            }
+            if (rdbtnUsaqi.Checked)
+            {
+                if (b > 0 && b <= 50)
+                {
+                    lblAqicategory.Text = "Good";
+                }
+                else if (b >= 51 && b <= 100)
+                {
+                    lblAqicategory.Text = "Moderate";
+                }
+                else if (b >= 101 && b <= 150)
+                {
+                    lblAqicategory.Text = "Unhealthy for Sensitive Groups";
+                }
+                else if (b >= 151 && b <= 200)
+                {
+                    lblAqicategory.Text = "Unhealthy";
+                }
+                else if (b >= 201 && b <= 300)
+                {
+                    lblAqicategory.Text = "Very unhealthy";
+                }
+                else if (b >= 301 && b <= 400)
+                {
+                    lblAqicategory.Text = "Hazardous";
+                }
+                else if (b >= 401 && b <= 500)
+                {
+                    lblAqicategory.Text = "Hazardous";
+                }
+                else
+                {
+                    lblAqicategory.Text = "NIL";
+                }
+            }
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             // Reset all the fields to default values
@@ -488,6 +779,15 @@ namespace AQI_Calculator
             rdbtnUsaqi.Checked = false;
             lblAqi.Text = "0";
             lblAqicategory.Text = "NIL";
+        }
+        private void txtBoxValue_TextChanged(object sender, EventArgs e)
+        {
+            btnCalculate.Enabled = true;
+
+            if (String.IsNullOrEmpty(txtBoxValue.Text))
+            {
+                btnCalculate.Enabled = false;
+            }
         }
     }
 }
