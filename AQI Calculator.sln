@@ -5,16 +5,20 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQI Calculator", "AQI Calculator\AQI Calculator.csproj", "{35529848-321C-4AD7-BE6D-5CBD58A840A0}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AQI Calculator Setup", "AQI Calculator Setup\AQI Calculator Setup.vdproj", "{6C3239EF-237F-48F6-BE25-32586823D22A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35529848-321C-4AD7-BE6D-5CBD58A840A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3239EF-237F-48F6-BE25-32586823D22A}.Debug|Any CPU.ActiveCfg = Release
+		{6C3239EF-237F-48F6-BE25-32586823D22A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
